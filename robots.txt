@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lisa18tobin.github.io/sitemap.xml
