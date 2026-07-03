@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A coding study and learning progress tracker built by Lisa Tobin."
+    />
+    <title>Learning Progress Tracker | Lisa Tobin</title>
+    <link rel="stylesheet" href="tracker.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="back-link" href="../index.html#projects">Portfolio</a>
+      <div>
+        <p class="eyebrow">Coding project</p>
+        <h1>Learning Progress Tracker</h1>
+        <p>
+          Track coding topics, confidence, study time, resources, and next steps in
+          one focused workspace.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard" aria-label="Learning summary">
+        <article>
+          <span>Total topics</span>
+          <strong id="totalTopics">0</strong>
+        </article>
+        <article>
+          <span>Completed</span>
+          <strong id="completedTopics">0</strong>
+        </article>
+        <article>
+          <span>Study hours</span>
+          <strong id="totalHours">0</strong>
+        </article>
+        <article>
+          <span>Average confidence</span>
+          <strong id="averageConfidence">0</strong>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <form class="tracker-form" id="topicForm">
+          <div class="form-heading">
+            <p class="eyebrow">Add a topic</p>
+            <h2>What are you learning?</h2>
+          </div>
+
+          <label>
+            Topic
+            <input id="topicName" type="text" placeholder="JavaScript arrays" required />
+          </label>
+
+          <label>
+            Category
+            <select id="topicCategory">
+              <option>HTML</option>
+              <option>CSS</option>
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>Git and GitHub</option>
+              <option>Problem solving</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Status
+              <select id="topicStatus">
+                <option>Not started</option>
+                <option>Learning</option>
+                <option>Practising</option>
+                <option>Completed</option>
+              </select>
+            </label>
+
+            <label>
+              Confidence
+              <input id="topicConfidence" type="range" min="1" max="5" value="3" />
+              <span class="range-value"><span id="confidenceValue">3</span>/5</span>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Study hours
+              <input id="topicHours" type="number" min="0" step="0.5" value="1" />
+            </label>
+
+            <label>
+              Resource
+              <input id="topicResource" type="text" placeholder="FreeCodeCamp, MDN, book..." />
+            </label>
+          </div>
+
+          <label>
+            Next step
+            <textarea
+              id="topicNextStep"
+              rows="4"
+              placeholder="Build a small example, revise notes, or practise exercises."
+            ></textarea>
+          </label>
+
+          <button class="primary-button" type="submit">Save topic</button>
+        </form>
+
+        <section class="topics-panel" aria-labelledby="topicsTitle">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Progress log</p>
+              <h2 id="topicsTitle">Saved topics</h2>
+            </div>
+            <label class="filter-control">
+              Filter
+              <select id="statusFilter">
+                <option>All</option>
+                <option>Not started</option>
+                <option>Learning</option>
+                <option>Practising</option>
+                <option>Completed</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="empty-state" id="emptyState">
+            Add your first topic to start building a study record.
+          </div>
+
+          <div class="topic-list" id="topicList"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="tracker.js"></script>
+  </body>
+</html>
